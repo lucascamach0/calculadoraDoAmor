@@ -1,17 +1,36 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar color="danger">
+    <ion-title>Calculadora do amor!</ion-title>
   </ion-navbar>
 </ion-header>
 
+
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <ion-label class="history"> Este software é feito atráves de uma API liberada <br> pela Deusa Afrodite, 
+    para que os humanos <br>encontre sua alma gêmea e espalhem o amor <br> pelo mundo. </ion-label> 
+  <ion-label class="history"> 0 - 25%   Não existe nem conversa. </ion-label> 
+  <ion-label class="history"> 26 - 50%  Fraco, quem sabe de com sorte. </ion-label> 
+  <ion-label class="history"> 51 - 75%  Não é a perfeição mas está no caminho.  </ion-label> 
+  <ion-label class="history"> 76 - 100% Melhor casal possível!  </ion-label> 
+  <ion-list>
+    <ion-item>
+      <ion-label floating> Nome da 1° pessoa </ion-label>
+      <ion-input type="text" [(ngModel)] = "name1"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating> Nome da 2° pessoa </ion-label>
+      <ion-input type="text" [(ngModel)] = "name2"></ion-input>
+      </ion-item>
+  </ion-list>
+  <ion-card text-center>
+    <ion-card-header>
+       {{name1 || ''}}
+       <ion-icon name="heart" color="danger"></ion-icon>
+       {{name2 || ''}}
+    </ion-card-header>
+    <ion-card-content class="score ">
+     {{ score || '0' }}%
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
